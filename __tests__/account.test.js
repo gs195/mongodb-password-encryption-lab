@@ -3,6 +3,7 @@ const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 const account = require('../src/account');
 
+
 describe('insert', () => {
   let connection;
   let db;
@@ -34,7 +35,7 @@ describe('insert', () => {
     });
 
     // Lab 1
-    describe('simple strategy', () => {
+    xdescribe('simple strategy', () => {
       it('signup should store the username and password into the database', async () => {
         const newUser = { username: 'John Smith', password: 'secret' };
         await account.simpleSignUp(newUser);
@@ -114,7 +115,7 @@ describe('insert', () => {
     });
 
     // Lab 5
-    xdescribe('hash with salt', () => {
+    describe('hash with salt', () => {
       it('should save username and password with random salt', async () => {
         const createdUser = await account.hashSaltSignUp(user);
 
